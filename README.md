@@ -1,21 +1,10 @@
 # sus_ingestion
 
-This folder defines all source code for the 'sus_ingestion' pipeline:
+Exemplo de ingestão de dados do sus feito como resolução de um case.
+Todo o pipeline foi construído usando o Databricks Free Edition. Os arquivos do sus foram extraídos do site https://datasus.saude.gov.br/transferencia-de-arquivos/# manualmente, e depois inseridos nos 'volumes' do Databricks 
 
-- `explorations`: Ad-hoc notebooks used to explore the data processed by this pipeline.
-- `transformations`: All dataset definitions and transformations.
-- `utilities`: Utility functions and Python modules used in this pipeline.
-
-## Getting Started
-
-To get started, go to the `transformations` folder -- most of the relevant source code lives there:
-
-* By convention, every dataset under `transformations` is in a separate file.
-* Take a look at the sample under "sample_users_sus_ingestion.py" to get familiar with the syntax.
-  Read more about the syntax at https://docs.databricks.com/ldp/developer/python-ref.
-* Use `Run file` to run and preview a single transformation.
-* Use `Run pipeline` to run _all_ transformations in the entire pipeline.
-* Use `+ Add` in the file browser to add a new data set definition.
-* Use `Schedule` to run the pipeline on a schedule!
-
-For more tutorials and reference material, see https://docs.databricks.com/ldp.
+Descrição das pastas:
+- `Transformations`: É aqui onde o Databricks procura os arquivos que vão gerar as tabelas do pipeline. Estão seprados em camadas bronze, prata, ouro e semântica, de acordo com a teoria da arquitetura medalhão
+- `assertions`: São notebooks python focados em testar a qualidade dos dados
+- `explorations`: Contém exemplos de notebooks python para exploração dos dados
+- `utilities`: Funções úteis e notebooks para transformação de dados na camada raw
