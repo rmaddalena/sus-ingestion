@@ -32,7 +32,7 @@ def stg_establishment_type():
     df_spark = spark.read.format("csv") \
         .option("header", "true") \
         .option("sep", ";") \
-        .option("encoding", "ISO-8859-1") \
+        .option("encoding", "utf-8") \
         .load(file_path)
     
     return sanitize_dataframe(df_spark)

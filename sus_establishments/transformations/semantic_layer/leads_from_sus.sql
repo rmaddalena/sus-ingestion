@@ -1,4 +1,8 @@
 CREATE OR REFRESH MATERIALIZED VIEW leads_from_sus
+(
+  CONSTRAINT cnes_obrigatorio EXPECT (cnes IS NOT NULL) ON VIOLATION FAIL UPDATE,
+  CONSTRAINT cep_format_valido EXPECT (cep RLIKE '^[0-9]{5}-[0-9]{3}$') ON VIOLATION FAIL UPDATE
+)
 AS
 SELECT 
   curated_sus_establishments.cnes,
